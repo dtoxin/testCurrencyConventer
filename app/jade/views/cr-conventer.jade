@@ -1,0 +1,13 @@
+.container.text-center
+	form.form-inline.conventer(name='currency-form')
+		.form-group
+			label {{From}}
+			.input-group.col-md-12
+				.input-group-addon
+					i.fa.fa-rub(ng-show="from == 'rub'")
+					i.fa.fa-euro(ng-show="from == 'eur'")
+				input#inFrom.form-control(type='text', placeholder='FROM' ng-model='src')
+		button.btn.btn-default.btn-xs GO
+
+		div
+			{{result}}
