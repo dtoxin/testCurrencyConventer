@@ -12,6 +12,7 @@ html(lang="ru")
 
 			// styles
 			link(rel='stylesheet', href='assets/components/bootstrap/dist/css/bootstrap.min.css')
+			link(rel='stylesheet', href='assets/css/theme.css')
 			link(rel='stylesheet', href='assets/components/components-font-awesome/css/font-awesome.min.css')
 			// scripts dependencies
 			script(src='assets/components/jquery/dist/jquery.min.js')
@@ -21,3 +22,16 @@ html(lang="ru")
 
 
 	body
+		section.content-wrapper
+			header
+				nav.navbar.navbar-fixed-top.custom
+					.container
+						a.homeLink(href='/#')
+							.fa.fa-home
+						span.pull-right.appTitle Currency conventer
+			.content
+				ng-view
+
+		footer
+			.container.text-center
+				| Ivan Wong for Interkon (2015)

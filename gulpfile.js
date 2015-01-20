@@ -34,7 +34,7 @@ gulp.task('app:hintjs', function() {
 
 gulp.task('app:styles', function(){
 	return gulp.src('./app/styl/**/*.styl')
-		.pipe(stylus())
+		.pipe(stylus({compress: true}))
 		.pipe(gulp.dest('./public/assets/css/'));
 });
 
