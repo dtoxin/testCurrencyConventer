@@ -1,0 +1,22 @@
+{
+  "name": "CurrencyConventer",
+  "version": "1.0.0",
+  "description": "Test task for Interkon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtoxin/testCurrencyConventer.git"
+  },
+  "author": "Ivan Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtoxin/testCurrencyConventer/issues"
+  },
+  "homepage": "https://github.com/dtoxin/testCurrencyConventer",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-jade": "*"
+  }
+
+}
