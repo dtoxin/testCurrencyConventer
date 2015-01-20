@@ -18,7 +18,8 @@
     "gulp-uglify": "*",
     "gulp-jade": "*",
     "gulp-jshint": "*",
-    "jshint-stylish": "*"
+    "jshint-stylish": "*",
+    "gulp-stylus": "*"
   }
 
 }

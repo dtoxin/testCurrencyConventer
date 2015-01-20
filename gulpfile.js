@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 	jade = require('gulp-jade'),
 	jshint = require('gulp-jshint'),
 	concat = require('gulp-concat'),
+	stylus = require('gulp-stylus')
 	uglify = require('gulp-uglify');
 
 
@@ -25,14 +26,20 @@ gulp.task('app:js', function() {
 
 /* jsHint */
 gulp.task('app:hintjs', function() {
-	gulp.src('./app/js/**/*.js')
+	return gulp.src('./app/js/**/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish')); // build-in default
 		//.pipe(jshint.reporter('fail'));
 });
 
+gulp.task('app:styles', function(){
+	return gulp.src('./app/styl/**/*.styl')
+		.pipe(stylus())
+		.pipe(gulp.dest('./public/assets/css/'));
+});
+
 /* ### DEFAULT ### */
-gulp.task('default', ['app:templates', 'app:js', 'app:hintjs']);
+gulp.task('default', ['app:templates', 'app:js', 'app:styles', 'app:hintjs']);
 
 /* ### JSHINT only ###*/
 gulp.task('hintjs', ['app:hintjs']);
