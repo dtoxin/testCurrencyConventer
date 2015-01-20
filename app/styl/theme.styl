@@ -5,6 +5,11 @@ body_background = #2f3337
 header_color = #f0efee
 header_background = #36c2e0
 footer_text_color = #fafafa
+item_selected_bg = #232735
+item_bg = #36c2e0
+item_border = #cfdbe2
+a_color = #fafafa
+a_color_hovered = #232735
 
 toUpper()
 	text-transform uppercase
@@ -32,8 +37,38 @@ nav.custom
 .appTitle
 	toUpper()
 	font-weight bold
-	font-size 2em
+	font-size 3em
 	padding-top 10px
 .homeLink
 	font-size 3em
 	color #f0efee
+	
+.container.content
+	padding-top 95px
+	
+.cr-item
+	.panel
+		border none
+		border-radius 0px
+		box-shadow none !important
+.item-name
+	font-size 4em
+	
+.small-mark
+	font-size 16px !important
+	color item_bg
+	vertical-align middle
+
+.go-link
+	font-size 24px
+	font-weight bold
+	background-color item_bg
+	padding 10px
+	a
+		color a_color
+		text-decoration none !important
+		-webkit-transition all 0.5s ease
+		-webkit-transition-delay 0.5s
+		-moz-transition all 0.5s ease
+		&:hover
+			color a_color_hovered

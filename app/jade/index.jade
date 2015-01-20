@@ -17,21 +17,23 @@ html(lang="ru")
 			// scripts dependencies
 			script(src='assets/components/jquery/dist/jquery.min.js')
 			script(src='assets/components/bootstrap/dist/js/bootstrap.min.js')
-			// application scripts
-			script(src='assets/js/app.min.js')
+			script(src='assets/components/angular/angular.min.js')
+			script(src='assets/components/angular-route/angular-route.min.js')
 
 
-	body
+	body(ng-app='crConventer')
 		section.content-wrapper
 			header
 				nav.navbar.navbar-fixed-top.custom
 					.container
 						a.homeLink(href='/#')
-							.fa.fa-home
+							i.fa.fa-home
 						span.pull-right.appTitle Currency conventer
-			.content
-				ng-view
+			.container.content
+				div(ng-view)
 
 		footer
 			.container.text-center
 				| Ivan Wong for Interkon (2015)
+		// application scripts
+		script(src='assets/js/app.min.js')
