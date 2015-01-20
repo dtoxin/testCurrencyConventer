@@ -18,5 +18,12 @@
     "assets/components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.2",
+    "jquery": "*",
+    "components-font-awesome": "4.2.0",
+    "angular": "1.2.28",
+    "angular-route": "1.2.28"
+  }
 }
