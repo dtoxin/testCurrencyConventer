@@ -1,2 +1,2 @@
 angular.module('app.constants', [])
-	.constant('consBackendUrl', 'http://rate-exchange.appspot.com/currency')
+	.constant('consBackendUrl', 'http://rate-exchange.appspot.com/currency');

@@ -18,7 +18,7 @@ angular.module('app.directives', [])
 				$scope.result = {
 					rate: 0,
 					v: 0
-				}
+				};
 				
 
 				$scope.submit = function(){
