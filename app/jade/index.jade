@@ -18,7 +18,9 @@ html(lang="ru")
 			script(src='assets/components/jquery/dist/jquery.min.js')
 			script(src='assets/components/bootstrap/dist/js/bootstrap.min.js')
 			script(src='assets/components/angular/angular.min.js')
+			script(src='assets/components/react/react.min.js')
 			script(src='assets/components/angular-route/angular-route.min.js')
+			script(src='assets/components/angular-local-storage/dist/angular-local-storage.min.js')
 
 
 	body(ng-app='crConventer')
@@ -28,7 +30,9 @@ html(lang="ru")
 					.container
 						a.homeLink(href='index.html')
 							i.fa.fa-home
-						span.pull-right.appTitle Currency conventer
+						.pull-right
+							span.appTitle Currency conventer
+							small &nbsp; v0.0.2
 			.container.content
 				div(ng-view)
 

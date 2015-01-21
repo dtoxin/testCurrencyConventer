@@ -1,6 +1,6 @@
 /* currency conventer v 0.0.1 by iwong */
-angular.module('crConventer', ['ngRoute', 'app.controllers', 'app.directives', 'app.constants', 'app.services'])
-	.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+angular.module('crConventer', ['ngRoute', 'LocalStorageModule', 'app.controllers', 'app.directives', 'app.constants', 'app.services'])
+	.config(['$routeProvider', '$httpProvider', 'localStorageServiceProvider', function($routeProvider, $httpProvider, localStorageServiceProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/index.html'
@@ -21,4 +21,6 @@ angular.module('crConventer', ['ngRoute', 'app.controllers', 'app.directives', '
 			$httpProvider.defaults.useXDomain = true;
 			delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
+			// set prefix fot local storage
+			localStorageServiceProvider.setPrefix('crc_')
 	}]);

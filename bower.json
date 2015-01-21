@@ -24,6 +24,8 @@
     "jquery": "*",
     "components-font-awesome": "4.2.0",
     "angular": "1.2.28",
-    "angular-route": "1.2.28"
+    "angular-route": "1.2.28",
+    "angular-local-storage": "~0.1.5",
+    "react": "~0.12.2"
   }
 }
