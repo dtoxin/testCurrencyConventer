@@ -1,13 +1,25 @@
-.container.text-center
-	form.form-inline.conventer(name='currency-form')
+.container.center-block.text-center
+	form.form-horizontal.conventer(name='currency-form')
 		.form-group
 			label {{From}}
-			.input-group.col-md-12
+			.input-group
 				.input-group-addon
 					i.fa.fa-rub(ng-show="from == 'rub'")
 					i.fa.fa-euro(ng-show="from == 'eur'")
-				input#inFrom.form-control(type='text', placeholder='FROM' ng-model='src')
-		button.btn.btn-default.btn-xs GO
-
-		div
-			{{result}}
+				input#inFrom.form-control(type='text', placeholder='FROM' ng-model='src', digits-only='')
+			br
+			button.btn.btn-success.btn-lg(ng-click='submit()') GO
+			.alert.alert-danger(role='alert', style='margin-top: 20px', ng-show="lastError !== ''")
+				p {{ lastError }}
+	.result.pull-right
+		span.result-icon
+			i.fa.fa-rub(ng-show="from == 'rub'")
+			i.fa.fa-euro(ng-show="from == 'eur'")
+			&nbsp;
+			| =
+			&nbsp;
+		span.result-value
+			| {{ result.v | currency }}
+		br
+		span.result-rate
+			| exchange rate: {{ result.rate | currency }}
