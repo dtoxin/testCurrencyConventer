@@ -14,7 +14,7 @@ angular.module('app.directives', [])
 				$scope.to = 'eur';
 				$scope.src = 0;
 				$scope.lastError = '';
-				$scope.history = [{}];
+				$scope.history = [];
 
 				$scope.result = {
 					rate: 0,
@@ -26,9 +26,8 @@ angular.module('app.directives', [])
 				// load history
 
 				if(localStorageService.isSupported){
-					console.log(localStorageService.get('history'));
+					//if need to clear all -  localStorageService.clearAll();
 					$scope.history = localStorageService.get('history');
-					//$scope.history = JSON.parse(localStorageService.get('history'));
 				}
 
 				// convert
@@ -55,18 +54,23 @@ angular.module('app.directives', [])
 							}
 							// save to history
 							if(localStorageService.isSupported){
-								//prevHistory = localStorageService.get('history');
-
+								// prevent NPE errors
+								if($scope.history === null){
+									$scope.history = [];
+								}
 								var obj = {
 									from: data.from,
 									to: data.to,
 									sum: ( parseFloat(data.v) / parseFloat(data.rate) ),
 									result: parseFloat(data.v)
 								};
+
 								$scope.history.unshift(obj);
+
 								if($scope.history.length >=30){
 									$scope.history.splice($scope.history.length-1, 1);
 								}
+
 								localStorageService.set('history', $scope.history);
 							}
 						}

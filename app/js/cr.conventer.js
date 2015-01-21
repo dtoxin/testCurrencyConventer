@@ -22,5 +22,5 @@ angular.module('crConventer', ['ngRoute', 'LocalStorageModule', 'app.controllers
 			delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 			// set prefix fot local storage
-			localStorageServiceProvider.setPrefix('crc_')
+			localStorageServiceProvider.setPrefix('crc_');
 	}]);

@@ -6,7 +6,6 @@ angular.module('app.directives')
 				history: '=history'
 			},
 			link: function(scope, elem, attr) {
-				console.log("history" + scope.history);
 				scope.$watchCollection('history', function() {
 					if(scope.history !== null) {
 						React.renderComponent(HistoryItems({history: scope.history}), elem[0]);
@@ -23,5 +22,5 @@ angular.module('app.directives')
 					}
 				]
 			}*/
-		}
+		};
 	});
