@@ -13,13 +13,13 @@
 				p {{ lastError }}
 	.result.pull-right
 		span.result-icon
-			i.fa.fa-rub(ng-show="from == 'rub'")
-			i.fa.fa-euro(ng-show="from == 'eur'")
+			i.fa.fa-rub(ng-show="from == 'eur'")
+			i.fa.fa-euro(ng-show="from == 'rub'")
 			&nbsp;
 			| =
 			&nbsp;
 		span.result-value
-			| {{ result.v | currency }}
+			| {{ result.v | currency: "":0 }}
 		br
 		span.result-rate
-			| exchange rate: {{ result.rate | currency }}
+			| exchange rate: {{ result.rate | currency: "":0 }}
